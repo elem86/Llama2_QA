@@ -1,0 +1,10 @@
+transformers
+sentence-transformers
+pinecone-client
+faiss-cpu
+datasets
+accelerate
+einops
+langchain
+xformers
+bitsandbytes
