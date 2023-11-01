@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 ```python
 # Set up ngrok
-ngrok.set_auth_token('2KzuZtXITCvMfDcWfw614GPCro3_Nz67rwi8R27fRK7v31Ww')  # Replace 'YOUR_NGROK_TOKEN' with your token
+ngrok.set_auth_token('YOUR_NGROK_TOKEN')  # Replace 'YOUR_NGROK_TOKEN' with your token
 
 # Start Streamlit app
 os.system("streamlit run llama2.py &")
