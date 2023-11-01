@@ -1,1 +1,1 @@
-# Llama2_QA
+# Llama2 QA, NLP project for Dataspeak
