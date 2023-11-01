@@ -25,7 +25,7 @@ embed_model = HuggingFaceEmbeddings(
 # Initialize Pinecone
 pinecone.init(
     api_key=os.environ.get("PINECONE_API_KEY")
-    or "ca8efc02-edfa-4428-800b-b10581e32969",
+    or "PINECONE_API_KEY", # The actual PINECONE_API_KEY 
     environment=os.environ.get("PINECONE_ENVIRONMENT") or "gcp-starter",
 )
 index = pinecone.Index("llama-2-rag")
