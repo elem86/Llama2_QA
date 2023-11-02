@@ -56,7 +56,7 @@ generate_text = transformers.pipeline(
     tokenizer=tokenizer,
     return_full_text=True,
     task="text-generation",
-    temperature=0.6,
+    temperature=0.7, # You can play with this value to see how you like the different results.
     max_new_tokens=512,
     repetition_penalty=1.1,
 )
