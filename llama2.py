@@ -30,6 +30,43 @@ pinecone.init(
 )
 index = pinecone.Index("llama-2-rag")
 
+# This section below is where first you need to load the dataset into the Pinecone index. You should only use it once, otherwise, it slows down the process.
+
+#Load the data
+# data = pd.read_csv("/content/drive/MyDrive/DS/Example.csv")
+
+# # Embed the documents and index them in Pinecone
+# batch_size = 32
+# total_batches = len(data) // batch_size + (len(data) % batch_size != 0)
+# progress = st.progress(0)  # Initialize the progress bar in Streamlit
+
+# for i in tqdm(range(0, len(data), batch_size)):
+#     i_end = min(len(data), i + batch_size)
+#     batch = data.iloc[i:i_end]
+#     ids = [f"{x['Id_question']}" for i, x in batch.iterrows()]
+#     texts = [x["Context"] for i, x in batch.iterrows()]
+#     embeds = embed_model.embed_documents(texts)
+
+#     # Store essential metadata for each document(this is an example below based on my own data)
+#     metadata = [
+#         {
+#             "id": x["Id_question"],
+#             "title": x["Cleaned_Title"],
+#             "answer": x["Cleaned_Body_answer"][
+#                 :100
+#             ],  # Store only the first 100 characters
+#             "score": x["Score_answer"],
+#         }
+#         for i, x in batch.iterrows()
+#     ]
+
+#     # Update the Pinecone index with the new embeddings and metadata
+#     index.upsert(vectors=zip(ids, embeds, metadata))
+
+#     # Update the Streamlit progress bar
+#     progress_value = min((i + batch_size) / len(data), 1.0)
+#     progress.progress(progress_value)
+
 # Set up the Hugging Face model for text generation
 model_id = "meta-llama/Llama-2-7b-chat-hf"
 bnb_config = transformers.BitsAndBytesConfig(
