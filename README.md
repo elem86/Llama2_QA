@@ -44,4 +44,4 @@ print("Streamlit UI can be accessed on:", public_url)
 
 
 ## Usage
-Once the Streamlit app is running, you can interact with the Llama QA model by entering questions into the provided input field. The model will retrieve relevant answers based on the underlying dataset and the capabilities of the Llama model.
+I would recommend loading the notebook file into Google Collab where you have the GPU power. Once you upload the app to the collab notebook you can run the notebook itself. When the Streamlit app is running, you can interact with the Llama QA model by entering questions into the provided input field. The model will retrieve relevant answers based on the underlying dataset and the capabilities of the Llama model.
