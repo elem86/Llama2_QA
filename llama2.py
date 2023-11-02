@@ -93,7 +93,7 @@ generate_text = transformers.pipeline(
     tokenizer=tokenizer,
     return_full_text=True,
     task="text-generation",
-    temperature=0.7, # You can play with this value to see how you like the different results.
+    temperature=0.1, # You can play with this value to see how you like the different results.
     max_new_tokens=512,
     repetition_penalty=1.1,
 )
@@ -104,20 +104,26 @@ text_field = "text"
 vectorstore = Pinecone(index, embed_model.embed_query, text_field)
 rag_pipeline = RetrievalQA.from_chain_type(
     llm=llm,
-    retriever=vectorstore.as_retriever(),
+    retriever=vectorstore.as_retriever(
+        search_type="similarity_score_threshold",
+        search_kwargs={"k": 5, "score_threshold": 0.7},
+    ),
     chain_type="stuff",
 )
 
-
-# Define the Streamlit interface for interactive testing
 def interactive_testing():
     st.title("Interactive Testing with Llama Model")
     user_input = st.text_input("You: ")
 
     if user_input:
-        answer = rag_pipeline({"query": user_input})
-        st.write(f"Answer: {answer['result']}")
+        response = rag_pipeline({"query": user_input})
+        answer = response['result']
 
+        # Check if the last sentence is a question and remove it
+        if answer.endswith('?'):
+            answer = ' '.join(answer.split('?')[:-1]) + '.'
+
+        st.write(f"Answer: {answer}")
 
 # Start the Streamlit app
 interactive_testing()
