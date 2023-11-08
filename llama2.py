@@ -25,7 +25,7 @@ embed_model = HuggingFaceEmbeddings(
 # Initialize Pinecone
 pinecone.init(
     api_key=os.environ.get("PINECONE_API_KEY")
-    or "PINECONE_API_KEY", # The actual PINECONE_API_KEY 
+    or "PINECONE_API_KEY", # Your PINECONE_API_KEY 
     environment=os.environ.get("PINECONE_ENVIRONMENT") or "gcp-starter",
 )
 index = pinecone.Index("llama-2-rag")
@@ -76,7 +76,7 @@ bnb_config = transformers.BitsAndBytesConfig(
     bnb_4bit_compute_dtype=bfloat16,
 )
 
-hf_auth = "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"
+hf_auth = "HF_AUTH_TOKEN" # Your HuggingFace token
 model_config = transformers.AutoConfig.from_pretrained(model_id, use_auth_token=hf_auth)
 model = transformers.AutoModelForCausalLM.from_pretrained(
     model_id,
