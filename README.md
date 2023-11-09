@@ -10,6 +10,12 @@ This project is an adaptation of the Llama QA model showcased in the Pinecone ex
 
 ## Setup
 
+### 0. Getting the necessary API keys:
+
+The code was built on/re-built based on the [Hugging Face article](https://agi-sphere.com/retrieval-augmented-generation-llama2/). In this article, it is explained that you will need to get a pinecone API key, a pinecone environment, Hugging Face authorization token. On top of these with my solution you will also need a ngrok API key.
+
+These keys can be acquired relatively fast, within minutes so it should not be an issue.
+
 ### 1. Clone the Repository:
 
 ```bash
