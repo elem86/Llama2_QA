@@ -51,3 +51,23 @@ print("Streamlit UI can be accessed on:", public_url)
 
 ## Usage
 I would recommend loading the notebook file into Google Collab where you have the GPU power. Once you upload the app to the collab notebook you can run the notebook itself. When the Streamlit app is running, you can interact with the Llama QA model by entering questions into the provided input field. The model will retrieve relevant answers based on the underlying dataset and the capabilities of the Llama model.
+
+
+## DEMO
+
+![image](https://github.com/elem86/Llama2_QA/assets/48759327/234bae2a-aa70-44c4-a768-8fab17e93b8e)
+
+![image](https://github.com/elem86/Llama2_QA/assets/48759327/82fdaedc-5bc5-46cf-b7ac-cfa3623a3b18)
+
+![image](https://github.com/elem86/Llama2_QA/assets/48759327/4b803bbc-4c8b-4fff-bdea-6282089c0426)
+
+![image](https://github.com/elem86/Llama2_QA/assets/48759327/db25312f-8884-44c3-8296-ddb9421f97a8)
+
+![image](https://github.com/elem86/Llama2_QA/assets/48759327/e03cdfbe-8930-493d-a342-66c04ece1c82)
+
+![image](https://github.com/elem86/Llama2_QA/assets/48759327/2b5aaa3c-0571-4e4e-85bd-20c974146f37)
+
+
+
+
+
